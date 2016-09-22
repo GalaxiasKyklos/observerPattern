@@ -35,7 +35,7 @@ public class NewsStation {
         ));
 
         scoresData.setScore("Tacit Knowledge", "Intel", 2, 1, players);
-
+        sportsMobileDisplay.stopNotifications();
         players = new ArrayList<Player>();
         players.add(new Player(
                 "Chivo",
