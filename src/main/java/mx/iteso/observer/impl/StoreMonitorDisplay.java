@@ -25,7 +25,7 @@ public class StoreMonitorDisplay implements Observer, Displayable {
         System.out.println(homeTeam + " (HOME) " + homeGoals + " - "
                 + awayTeam + " (AWAY) " + awayGoals);
         for (Player player : players) {
-            System.out.print(player);
+            System.out.println(player);
         }
     }
 

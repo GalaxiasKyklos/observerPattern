@@ -14,6 +14,12 @@ public class Player {
     };
     private int numPosition;
     private String team;
+    public enum NUMPOSITIONS {
+        GOALKEEPER,
+        DEFENDER,
+        MIDFIELDER,
+        FORWARD
+    };
 
     public Player(String name, int number, int numPosition, String team) {
         this.name = name;
