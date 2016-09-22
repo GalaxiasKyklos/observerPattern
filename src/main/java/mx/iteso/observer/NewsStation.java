@@ -1,6 +1,7 @@
 package mx.iteso.observer;
 
 import mx.iteso.observer.impl.ScoresData;
+import mx.iteso.observer.impl.SportsMobileDisplay;
 import mx.iteso.observer.impl.StoreMonitorDisplay;
 import static mx.iteso.observer.Player.NUMPOSITIONS;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class NewsStation {
         scoresData = new ScoresData();
 
         StoreMonitorDisplay storeMonitorDisplay = new StoreMonitorDisplay(scoresData);
+        SportsMobileDisplay sportsMobileDisplay=new SportsMobileDisplay(scoresData);
 
         ArrayList<Player> players = new ArrayList<Player>();
         players.add(new Player(
