@@ -53,4 +53,13 @@ public class Player {
     public void setTeam(String team) {
         this.team = team;
     }
+
+    public String toString() {
+        String ret = "";
+        ret += "Name: " + this.getName();
+        ret += "\nNumber: " + this.getNumber();
+        ret += "\nPosition: " + POSITIONS[numPosition];
+        ret += "\nTeam: " + this.getTeam();
+        return ret;
+    }
 }

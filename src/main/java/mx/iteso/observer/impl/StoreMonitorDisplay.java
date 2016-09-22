@@ -21,9 +21,12 @@ public class StoreMonitorDisplay implements Observer, Displayable {
     }
 
     public void display() {
-        System.out.println("Latest score is:");
+        System.out.println("Store Monitor says\n Latest score is:");
         System.out.println(homeTeam + " (HOME) " + homeGoals + " - "
                 + awayTeam + " (AWAY) " + awayGoals);
+        for (Player player : players) {
+            System.out.print(player);
+        }
     }
 
     public void update(String home, String away, int homeGoals, int awayGoals, ArrayList<Player> players) {
