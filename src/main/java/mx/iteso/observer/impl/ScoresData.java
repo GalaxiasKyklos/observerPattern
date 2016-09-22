@@ -37,11 +37,12 @@ public class ScoresData implements Subject {
         notifyObservers();
     }
 
-    public void setScore( String homeTeam, String awayTeam, int homeGoals, int awayGoals){
+    public void setScore( String homeTeam, String awayTeam, int homeGoals, int awayGoals, ArrayList<Player> players){
         this.homeTeam = homeTeam;
         this.awayTeam =  awayTeam;
         this.homeGoals = homeGoals;
         this.awayGoals = awayGoals;
+        this.players = players;
         newScore();
     }
 }

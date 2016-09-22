@@ -61,7 +61,7 @@ public class Player {
     }
 
     public String toString() {
-        String ret = "";
+        String ret = "Player:\n";
         ret += "Name: " + this.getName();
         ret += "\nNumber: " + this.getNumber();
         ret += "\nPosition: " + POSITIONS[numPosition];
