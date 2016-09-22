@@ -21,6 +21,7 @@ public class ScoresDataTest {
     public void setUp() {
         scoresData = new ScoresData();
         observer = mock(Observer.class);
+        players = new ArrayList<Player>();
         players.add(new Player(
                 "Name",
                 0,
