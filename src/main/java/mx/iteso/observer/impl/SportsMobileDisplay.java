@@ -24,9 +24,12 @@ public class SportsMobileDisplay implements Observer, Displayable{
         }
 
         public void display() {
-            System.out.println("Latest score is:");
+            System.out.println("Jamaicon Mobile App says \nLatest score is:");
             System.out.println(homeTeam + " (HOME) " + homeGoals + " - "
                     + awayTeam + " (AWAY) " + awayGoals);
+            for (Player player : players) {
+                System.out.println(player);
+            }
         }
 
         public void update(String home, String away, int homeGoals, int awayGoals, ArrayList<Player> players) {
