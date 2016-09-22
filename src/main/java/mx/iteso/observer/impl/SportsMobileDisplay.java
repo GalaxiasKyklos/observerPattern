@@ -41,5 +41,11 @@ public class SportsMobileDisplay implements Observer, Displayable{
             display();
         }
 
+        public void stopNotifications() {
+            this.scoresData.removeObserver(this);
+        }
 
+        public void renewNotifications() {
+            this.scoresData.registerObserver(this);
+        }
 }
