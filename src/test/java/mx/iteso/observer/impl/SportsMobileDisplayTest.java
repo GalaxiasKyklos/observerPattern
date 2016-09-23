@@ -4,9 +4,7 @@ import mx.iteso.observer.Player;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.mockito.Mockito.*;
 
 
@@ -22,7 +20,7 @@ public class SportsMobileDisplayTest {
     public void setUp() {
         scoresData = mock(ScoresData.class);
         sportsMobileDisplay = new SportsMobileDisplay(scoresData);
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
         players.add(new Player(
                 "Name",
                 0,
@@ -44,18 +42,19 @@ public class SportsMobileDisplayTest {
 
     @Test
     public void testStopNotifications() {
-        sportsMobileDisplay = mock(new SportsMobileDisplay(scoresData).getClass());
-        scoresData.registerObserver(sportsMobileDisplay);
         sportsMobileDisplay.stopNotifications();
         scoresData.setScore("home","js",2,3,players);
-        verify(sportsMobileDisplay, times(0)).display();
-        //when(scoresData.notifyObservers()).then(sportsMobileDisplay.display());
-        //when(sportsMobileDisplay.display()).thenReturn("Llamado");
-        //scoresData.notifyObservers();
-        //verify(sportsMobileDisplay, times(1)).display();
-        //sportsMobileDisplay.stopNotifications();
-        //verify(sportsMobileDisplay, times(0)).display();
+        verify(scoresData, times(1)).removeObserver(any());
     }
 
+    @Test
+    public void testRenewNotifications() {
+        sportsMobileDisplay.stopNotifications();
+        scoresData.setScore("home","js",2,3,players);
+        verify(scoresData, times(1)).removeObserver(any());
+        sportsMobileDisplay.renewNotifications();
+        verify(scoresData, times(2)).registerObserver(any()); //Dos, uno para el @Before y otro para el renew
+        scoresData.setScore("home","js",2,3,players);
+    }
 
 }

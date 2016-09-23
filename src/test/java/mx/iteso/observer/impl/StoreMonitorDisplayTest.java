@@ -1,6 +1,5 @@
 package mx.iteso.observer.impl;
 
-import mx.iteso.observer.Displayable;
 import mx.iteso.observer.Player;
 import static mx.iteso.observer.Player.NUMPOSITIONS;
 
@@ -11,8 +10,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 
 public class StoreMonitorDisplayTest {
@@ -24,7 +21,7 @@ public class StoreMonitorDisplayTest {
     public void setUp() {
         scoresData = mock(ScoresData.class);
         storeMonitorDisplay = new StoreMonitorDisplay(scoresData);
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
         players.add(new Player(
                 "Name",
                 0,
