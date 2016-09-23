@@ -20,13 +20,15 @@ public class StoreMonitorDisplay implements Observer, Displayable {
         this.scoresData.registerObserver(this);
     }
 
-    public void display() {
-        System.out.println("Store Monitor says\n Latest score is:");
-        System.out.println(homeTeam + " (HOME) " + homeGoals + " - "
-                + awayTeam + " (AWAY) " + awayGoals);
+    public String display() {
+        String ret = "Store Monitor says\n Latest score is:";
+        ret += homeTeam + " (HOME) " + homeGoals + " - "
+                + awayTeam + " (AWAY) " + awayGoals;
         for (Player player : players) {
-            System.out.println(player);
+            ret += player;
         }
+        System.out.println(ret);
+        return ret;
     }
 
     public void update(String home, String away, int homeGoals, int awayGoals, ArrayList<Player> players) {
